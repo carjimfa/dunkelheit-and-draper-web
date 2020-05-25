@@ -1,0 +1,83 @@
+@import "https://use.typekit.net/sas2rsl.css";
+@import "https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap";
+@import "./animations.css";
+
+body {
+    font-family: Rubik, sans-serif;
+	font-size: 24px;
+	line-height: inherit;
+  
+	background-color: #3B625C;
+    color: #F9BCBF;
+    overflow: hidden;
+}
+
+header a {
+    margin: 0 0 0 16px;
+    color: #F9BCBF;
+}
+
+header img.image-logo{
+    max-height: 80px;
+}
+
+
+.mix-blend-exclusion{
+    mix-blend-mode: exclusion;
+}
+
+.color-green{
+    color:#3B625C !important;
+}
+
+.color-pink{
+    color:#F9BCBF !important;
+}
+
+.font-stroke-green{
+    -webkit-text-stroke-color: #3B625C!important;
+}
+
+.font-stroke-pink{
+    -webkit-text-stroke-color: #F9BCBF!important;
+}
+
+.background-green{
+    background-color: #3B625C !important;
+}
+
+.background-pink{
+    background-color:#F9BCBF !important;
+}
+
+.border-top-pink-h1{
+    border-top: 4px solid #F9BCBF!important;
+}
+
+.border-top-green-h1{
+    border-top: 4px solid #3B625C!important;
+}
+
+.border-left-pink-h1{
+    border-left: 2px solid #F9BCBF!important;
+}
+
+.border-left-green-h1{
+    border-left: 2px solid #3B625C!important;
+}
+
+#workflow-navigation li.selected.font-stroke-pink{
+    -webkit-text-stroke-color: #F9BCBF!important;
+}
+
+#workflow-navigation li.selected.font-stroke-green{
+    -webkit-text-stroke-color: #3B625C!important;
+}
+
+.font-rubik{
+    font-family: Rubik;
+}
+
+.font-lust{
+    font-family: Lust;
+}
