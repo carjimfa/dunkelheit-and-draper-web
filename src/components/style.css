@@ -21,6 +21,19 @@ header img.image-logo{
     max-height: 80px;
 }
 
+#version{
+    vertical-align:middle;
+    background-size:contain; 
+    background-repeat:no-repeat;
+    background-position:center;
+    min-height:50px;
+    padding:25px;
+    animation:rotate 1s infinite;
+    margin: 0;
+}
+
+
+
 
 .mix-blend-exclusion{
     mix-blend-mode: exclusion;

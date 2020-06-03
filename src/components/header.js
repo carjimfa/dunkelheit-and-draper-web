@@ -7,6 +7,9 @@ import LogoImage from "./logo-image"
 
 
 const Header = ({ siteTitle }) => {
+
+
+
   let data=useStaticQuery(graphql`
     query {
         nameImage:allFile(filter: {relativePath: {eq: "dunkelheit-draper-name.svg"}}) {
@@ -38,6 +41,10 @@ const Header = ({ siteTitle }) => {
       }
     `);
 
+  const backgroundStyles = `
+    url(${data.versionImage.edges[0].node.publicURL});
+  `;
+
   let result=<header
     style={{
       marginBottom: `1.45rem`,
@@ -62,13 +69,12 @@ const Header = ({ siteTitle }) => {
         <div className="col-4">
           <a href="#contact" class="font-rubik">Contact</a>
         </div>
-        <div className="col-4">
-        <a>
-          <img id="rotating-svg" src={data.versionImage.edges[0].node.publicURL} />
-            <span>
-                0.8
-            </span>
-        </a>
+        <div className="col-4" style={{animation:"rotate 10s infinite linear"}}>
+          <a id="version" style={{
+            backgroundImage:`url(${data.versionImage.edges[0].node.publicURL})`
+            }}>
+            <span>0.8</span>
+          </a>
         </div>
       </div>
       
