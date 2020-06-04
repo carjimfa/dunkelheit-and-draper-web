@@ -41,9 +41,6 @@ const Header = ({ siteTitle }) => {
       }
     `);
 
-  const backgroundStyles = `
-    url(${data.versionImage.edges[0].node.publicURL});
-  `;
 
   let result=<header
     style={{
