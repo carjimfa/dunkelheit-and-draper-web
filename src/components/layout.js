@@ -13,7 +13,7 @@ import Header from "./header"
 import "./layout.css"
 import "./style.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, outerHeight, innerHeight}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,23 +24,29 @@ const Layout = ({ children }) => {
     }
   `)
 
+  document.onmousemove=function(evt){
+    document.getElementById("ball").style.left=evt.pageX+"px";
+    document.getElementById("ball").style.top=evt.pageY+"px";
+  }
+
+
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
-        <main className="grid grid-center">{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+    <div>
+      <div id="main-layout-content">
+        <Header siteTitle={data.site.siteMetadata.title}/>
+        <div style={{height:outerHeight}}>
+          <main className="grid grid-center" style={{height:innerHeight}}>{children}</main>
+        </div>
       </div>
-    </>
+      <div id="ball" className="ball"></div>
+    </div>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  outerHeight: PropTypes.node.isRequired,
+  innerHeight: PropTypes.node.isRequired,
 }
 
 export default Layout

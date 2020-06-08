@@ -9,6 +9,18 @@ import LogoImage from "./logo-image"
 const Header = ({ siteTitle }) => {
 
 
+  function onEnterPointer(){
+    console.log("mouseEnter");
+    document.getElementById("ball").style.width = "10px";
+    document.getElementById("ball").style.height = "10px";
+  }
+
+  function onLeavePointer() {
+    console.log("mouseLeave");
+    document.getElementById("ball").style.width = "100px";
+    document.getElementById("ball").style.height = "100px";
+  }
+  
 
   let data=useStaticQuery(graphql`
     query {
@@ -61,10 +73,10 @@ const Header = ({ siteTitle }) => {
     <div style={{ margin: `0 auto`, padding: `1.45rem 1.0875rem`, textAlign:`right`}} className="col-4">
       <div className="grid grid-center">
         <div className="col-4">
-          <a href="workflow/index.html" class="font-lust">Workflow</a>
+        <Link to="/workflow/" onMouseEnter={onEnterPointer} onMouseLeave={onLeavePointer}>Workflow</Link>
         </div>
         <div className="col-4">
-          <a href="#contact" class="font-rubik">Contact</a>
+          <a href="#contact" className="font-rubik" onMouseEnter={onEnterPointer} onMouseLeave={onLeavePointer}>Contact</a>
         </div>
         <div className="col-4" style={{animation:"rotate 10s infinite linear"}}>
           <a id="version" style={{

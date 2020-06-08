@@ -94,3 +94,22 @@ header img.image-logo{
 .font-lust{
     font-family: Lust;
 }
+
+.ball{
+    background-color: #F9BCBF;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: exclusion;
+    transition: all ease-out .5s;
+    pointer-events: none;
+}
+
+.ball-closed{
+    width: 0px;
+    height: 0px;
+}
