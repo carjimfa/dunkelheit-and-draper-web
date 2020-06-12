@@ -1,4 +1,9 @@
-.grid {
+  body{
+    margin:0;
+    width: 100vw;
+  }
+  
+  .grid {
     display: grid;
     grid-template-columns: repeat(12,  1fr);
     grid-gap: 1rem;

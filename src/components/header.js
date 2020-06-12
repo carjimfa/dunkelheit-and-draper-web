@@ -56,29 +56,37 @@ const Header = ({ siteTitle }) => {
 
   let result=<header
     style={{
-      marginBottom: `1.45rem`,
+      display:'grid',
+      gridTemplateColumns:"25vw 50vw 25vw",
+      gridTemplateRows:"auto",
+      justifyItems: "center",
+      alignItems:"center"
     }}
-    className="grid grid-center"
+    className=""
   >
-    <div style={{ margin: `0 auto`, padding: `1.45rem 1.0875rem`, textAlign:`left`, width: `100%`}} className="col-4">
+    <div style={{ margin: `0 auto`, textAlign:`left`, width: `100%`}}>
       <h1 style={{ margin: 0, width: `100%` }}>
         <Link to="/" style={{textDecoration: `none`, width: `100%`}}>
           <img src={data.nameImage.edges[0].node.publicURL} href=""/>
         </Link>
       </h1>
     </div>
-    <div style={{ margin: `0 auto`, padding: `1.45rem 1.0875rem`, textAlign:`center`}} className="col-4">
+    <div style={{ margin: `0 auto`, textAlign:`center`, width: `100%`}}>
       <LogoImage></LogoImage>
     </div>
-    <div style={{ margin: `0 auto`, padding: `1.45rem 1.0875rem`, textAlign:`right`}} className="col-4">
-      <div className="grid grid-center">
-        <div className="col-4">
+    <div style={{ margin: `0 auto`, textAlign:`right`, width: `100%`}}>
+      <div style={{display:'grid',
+      gridTemplateColumns:"33.33% 33.33% 33.33%",
+      gridTemplateRows:"auto",
+      justifyItems: "center",
+      alignItems:"center"}}>
+        <div>
         <Link to="/workflow/" onMouseEnter={onEnterPointer} onMouseLeave={onLeavePointer}>Workflow</Link>
         </div>
-        <div className="col-4">
+        <div>
           <a href="#contact" className="font-rubik" onMouseEnter={onEnterPointer} onMouseLeave={onLeavePointer}>Contact</a>
         </div>
-        <div className="col-4" style={{animation:"rotate 10s infinite linear"}}>
+        <div style={{animation:"rotate 10s infinite linear"}}>
           <a id="version" style={{
             backgroundImage:`url(${data.versionImage.edges[0].node.publicURL})`
             }}>
