@@ -8,10 +8,12 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout innerHeight="100%" outerHeight="60vh">
     <SEO title="Home" />
-    <div className="col-3"><h1>Research</h1></div>
-    <div className="col-3"><h1>Design</h1></div>
-    <div className="col-3"><h1>Implement</h1></div>
-    <div className="col-3"><h1>Repeat</h1></div>
+    <div className="col-2"><h1></h1></div>
+    <div className="col-2"><h1>Research,</h1></div>
+    <div className="col-2 font-lust"><h1>Design,</h1></div>
+    <div className="col-2"><h1>Implement,</h1></div>
+    <div className="col-2 font-lust"><h1>Repeat</h1></div>
+    <div className="col-2"><h1></h1></div>
   </Layout>
 )
 

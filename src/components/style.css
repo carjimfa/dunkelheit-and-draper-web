@@ -97,19 +97,14 @@ header img.image-logo{
 
 .ball{
     background-color: #F9BCBF;
-    width: 100px;
-    height: 100px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
     mix-blend-mode: exclusion;
-    transition: all ease-out .5s;
+    transition: top ease-out .1s, left ease-out .1s, width ease-out .25s, height ease-out .25s;
     pointer-events: none;
-}
-
-.ball-closed{
-    width: 0px;
-    height: 0px;
 }

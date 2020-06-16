@@ -31,7 +31,7 @@ const Layout = ({ children, outerHeight, innerHeight}) => {
 
 
   return (
-    <div>
+    <div id="layout-main-container">
       <div id="main-layout-content">
         <Header siteTitle={data.site.siteMetadata.title}/>
         <div style={{height:outerHeight}}>
