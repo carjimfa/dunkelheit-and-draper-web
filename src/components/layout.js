@@ -13,7 +13,13 @@ import Header from "./header"
 import "./layout.css"
 import "./style.css"
 
-const Layout = ({ children, outerHeight, innerHeight}) => {
+const Layout = ({ children, outerHeight, innerHeight, backgroundColor="#3B625C", color="#F9BCBF", gridType="center"}) => {
+  let greenColor="#3B625C";
+  let pinkColor="#F9BCBF";
+  let ballBackgroundColor=backgroundColor==greenColor?pinkColor:greenColor;
+  let ballColor=backgroundColor==greenColor?greenColor:pinkColor;
+  let gridClass="grid grid-"+gridType;
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,21 +30,21 @@ const Layout = ({ children, outerHeight, innerHeight}) => {
     }
   `)
 
-  document.onmousemove=function(evt){
-    document.getElementById("ball").style.left=evt.pageX+"px";
-    document.getElementById("ball").style.top=evt.pageY+"px";
-  }
-
 
   return (
-    <div id="layout-main-container">
+    <div id="layout-main-container" style={{backgroundColor:backgroundColor, color:color}}>
       <div id="main-layout-content">
-        <Header siteTitle={data.site.siteMetadata.title}/>
+        <Header siteTitle={data.site.siteMetadata.title} color={color} backgroundColor={backgroundColor}/>
         <div style={{height:outerHeight}}>
-          <main className="grid grid-center" style={{height:innerHeight}}>{children}</main>
+          <main className={gridClass} style={{height:innerHeight}}>{children}</main>
         </div>
       </div>
-      <div id="ball" className="ball"></div>
+      <div id="ball" className="ball" style={{
+        backgroundColor:ballBackgroundColor,
+        mixBlendMode:"exclusion"
+      }}>
+        <div id="ball-text" style={{mixBlendMode:"normal", color:ballColor}}></div>
+      </div>
     </div>
   )
 }

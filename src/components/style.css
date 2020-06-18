@@ -9,12 +9,11 @@ body {
   
 	background-color: #3B625C;
     color: #F9BCBF;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 header a {
     margin: 0 0 0 16px;
-    color: #F9BCBF;
 }
 
 header img.image-logo{
@@ -33,7 +32,12 @@ header img.image-logo{
 }
 
 
-
+h1.workflow-over-title{
+    text-align: left;
+    border-bottom: 4px #3B625C solid;
+    width: 100%;
+    text-transform: uppercase;
+}
 
 .mix-blend-exclusion{
     mix-blend-mode: exclusion;
@@ -95,16 +99,33 @@ header img.image-logo{
     font-family: Lust;
 }
 
+.no-decoration{
+    text-decoration: none;
+}
+
 .ball{
-    background-color: #F9BCBF;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
     mix-blend-mode: exclusion;
     transition: top ease-out .1s, left ease-out .1s, width ease-out .25s, height ease-out .25s;
     pointer-events: none;
+    overflow: hidden !important;
+}
+
+#ball-text{
+    text-align: center;
+    vertical-align: middle;
+    mix-blend-mode: exclusion;
+    height: 50px;
+    width: 150px;
+    padding: 100px 50px 100px 50px;
+    opacity: 0;
+    transition: all .1s linear;
+    pointer-events: none;
+    overflow: hidden !important;
 }

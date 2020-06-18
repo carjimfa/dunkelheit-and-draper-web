@@ -3,6 +3,7 @@
     margin:0;
     width: calc(100vw);
     min-height: 100vh;
+    max-height: 100vh;
   }
   
   .grid {
@@ -16,6 +17,12 @@
     justify-items: center;
     justify-content: space-evenly;
     align-items: center;
+  }
+
+  .grid-baseline{
+    justify-items: baseline;
+    justify-content: space-evenly;
+    align-items: baseline;
   }
   
   .col-1 {
