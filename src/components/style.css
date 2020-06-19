@@ -31,6 +31,49 @@ header img.image-logo{
     margin: 0;
 }
 
+#workflow-element-description ul{
+    border-left: 2px solid #3B625C;
+    font-family: Rubik;
+    font-size: 18px !important;
+    color: #3B625C;
+    letter-spacing: 0.65px;
+    line-height: 24px;
+    list-style: none;
+    padding-inline-start: 16px;
+    transition: all linear 0.5;
+}
+
+#workflow-navigation li{
+    float: left;
+    list-style: none;
+    margin-left: 25px;
+    letter-spacing: 1.5px;
+    font-family: Rubik;
+    color: #3B625C;
+    text-align: center;
+}
+
+#workflow-navigation li.selected{
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: #3B625C;
+    font-family: Lust;
+    color: #3B625C;
+    text-decoration: none;
+}
+
+#workflow-navigation ul li:before {
+    content: url('../images/arrow_right.svg');
+    margin-right: 25px;
+}
+
+#workflow-navigation ul li:first-child::before {
+    content: '';
+}
+
+#workflow-navigation ul li:nth-child(2)::before {
+    content: '';
+}
+
 
 h1.workflow-over-title{
     text-align: left;
@@ -38,6 +81,16 @@ h1.workflow-over-title{
     width: 100%;
     text-transform: uppercase;
 }
+
+h1.workflow-title{
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+    width: 100%;
+    font-size: 149px;
+    line-height: 123px;
+}
+
 
 .mix-blend-exclusion{
     mix-blend-mode: exclusion;
