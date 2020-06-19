@@ -46,22 +46,29 @@ const WorkflowElements = ({ }) => {
     }
 
     const hideElement = function (queryElement) {
-        document.getElementById(queryElement).style.opacity = "0";
+        if(typeof(document)!==`undefined`){
+            document.getElementById(queryElement).style.opacity = "0";
+        }
     }
 
     const showElement = function (queryElement) {
-        document.getElementById(queryElement).style.opacity = "1";
+        if(typeof(document)!==`undefined`){
+            document.getElementById(queryElement).style.opacity = "1";
+        }
     }
 
     const updateSelectorNavigation = function () {
-        let alreadySelected = document.getElementsByClassName("selected");
-        for (let i = 0; i < alreadySelected.length; i++) {
-            alreadySelected[i].classList.remove("selected");
+        if(typeof(document)!==`undefined`){
+            let alreadySelected = document.getElementsByClassName("selected");
+            for (let i = 0; i < alreadySelected.length; i++) {
+                alreadySelected[i].classList.remove("selected");
+            }
+            let navigationQuery = pages[pageNumber].navigation;
+            currentTitle=pages[pageNumber].title;
+            console.log(currentTitle);
+            document.getElementById(navigationQuery).classList.add("selected");
+    
         }
-        let navigationQuery = pages[pageNumber].navigation;
-        currentTitle=pages[pageNumber].title;
-        console.log(currentTitle);
-        document.getElementById(navigationQuery).classList.add("selected");
     }
 
     const onKeyUpEvent = function (event) {
@@ -74,26 +81,33 @@ const WorkflowElements = ({ }) => {
     }
 
     const enableNavigationEvents = function () {
-        document.body.addEventListener('wheel', onWheelEvent, false);
-        document.addEventListener('keyup', onKeyUpEvent);
+        if(typeof(document)!==`undefined`){
+            document.body.addEventListener('wheel', onWheelEvent, false);
+            document.addEventListener('keyup', onKeyUpEvent);
+        }
     }
 
     const disableNavigationEvents = function () {
-        document.body.removeEventListener('wheel', onWheelEvent, false);
-        document.removeEventListener('keyup', onKeyUpEvent);
+        if(typeof(document)!==`undefined`){
+            document.body.removeEventListener('wheel', onWheelEvent, false);
+            document.removeEventListener('keyup', onKeyUpEvent);    
+        }
     }
 
     const onWheelEvent = function (event) {
-        window.scrollTo(0, 100);
-        if (event.deltaY > 0) {
-            disableNavigationEvents();
-            next();
-            setTimeout(enableNavigationEvents, 800);
-        } else {
-            disableNavigationEvents();
-            previous();
-            setTimeout(enableNavigationEvents, 800);
+        if(window){
+            window.scrollTo(0, 100);
+            if (event.deltaY > 0) {
+                disableNavigationEvents();
+                next();
+                setTimeout(enableNavigationEvents, 800);
+            } else {
+                disableNavigationEvents();
+                previous();
+                setTimeout(enableNavigationEvents, 800);
+            }
         }
+
     }
 
     enableNavigationEvents();

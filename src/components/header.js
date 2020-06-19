@@ -14,7 +14,11 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
   let greenColor="#3B625C";
   let pinkColor="#F9BCBF";
 
-  let ball = document.getElementById("ball");
+  let ball;
+  if(typeof(document)!==`undefined`){
+    ball = document.getElementById("ball");
+  }
+
 
   let mouseX = 0;
   let mouseY = 0;
@@ -24,56 +28,67 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
 
   let speed = 1;
 
-  document.onmousemove=function(evt){
-    ball=document.getElementById("ball");
-    document.getElementById("ball").style.left=evt.pageX+"px";
-    document.getElementById("ball").style.top=evt.pageY+"px";
-    mouseX=evt.pageX;
-    mouseY=evt.pageY;
+  if(typeof(document)!==`undefined`){
+    document.onmousemove=function(evt){
+      ball=document.getElementById("ball");
+      document.getElementById("ball").style.left=evt.pageX+"px";
+      document.getElementById("ball").style.top=evt.pageY+"px";
+      mouseX=evt.pageX;
+      mouseY=evt.pageY;
+    }
   }
 
+
+
   function animate () {
-    ball = document.getElementById("ball");
+    if(typeof(document)!==`undefined`){
+      ball = document.getElementById("ball");
     
-    let distX = mouseX - ballX;
-    let distY = mouseY - ballY;
-
-    ballX = ballX + (distX * speed);
-    ballY = ballY + (distY * speed);
-    
-    if(ball){
-      if(ballX != 0 || ballY != 0){
-        ball.style.left = ballX + "px";
-        ball.style.top = ballY + "px";
+      let distX = mouseX - ballX;
+      let distY = mouseY - ballY;
+  
+      ballX = ballX + (distX * speed);
+      ballY = ballY + (distY * speed);
+      
+      if(ball){
+        if(ballX != 0 || ballY != 0){
+          ball.style.left = ballX + "px";
+          ball.style.top = ballY + "px";
+        }
       }
+  
+      requestAnimationFrame (animate);
     }
-
-    requestAnimationFrame (animate);
   }
 
   animate();
   
   function onEnterPointer(text=null, textTime=200) {
-    isShown=true;
-    document.getElementById("ball").style.width = "250px";
-    document.getElementById("ball").style.height = "250px";
-    document.getElementById("ball").style.mixBlendMode = "normal";
-    setTimeout(()=>{
-      if(isShown){
-        document.getElementById("ball-text").innerHTML=text?text:"Let's see!";
-        document.getElementById("ball-text").style.opacity="1";
-      }
-      
-    }, textTime);
+    if(typeof(document)!==`undefined`){
+      isShown=true;
+      document.getElementById("ball").style.width = "250px";
+      document.getElementById("ball").style.height = "250px";
+      document.getElementById("ball").style.mixBlendMode = "normal";
+      setTimeout(()=>{
+        if(isShown){
+          document.getElementById("ball-text").innerHTML=text?text:"Let's see!";
+          document.getElementById("ball-text").style.opacity="1";
+        }
+        
+      }, textTime);
+    }
   }
 
   function onLeavePointer() {
-    isShown=false;
-    document.getElementById("ball-text").innerHTML="";
-    document.getElementById("ball-text").style.opacity="0";
-    document.getElementById("ball").style.width = "20px";
-    document.getElementById("ball").style.height = "20px";
-    document.getElementById("ball").style.mixBlendMode = "exclusion";
+    if(typeof(document)!==`undefined`){
+      isShown=false;
+      document.getElementById("ball-text").innerHTML="";
+      document.getElementById("ball-text").style.opacity="0";
+      document.getElementById("ball").style.width = "20px";
+      document.getElementById("ball").style.height = "20px";
+      document.getElementById("ball").style.mixBlendMode = "exclusion";
+    }
+
   }
 
 
