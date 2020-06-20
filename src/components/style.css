@@ -165,7 +165,7 @@ h1.workflow-title{
     left: 0;
     transform: translate(-50%, -50%);
     mix-blend-mode: exclusion;
-    transition: top ease-out .1s, left ease-out .1s, width ease-out .25s, height ease-out .25s;
+    transition: width ease-out .25s, height ease-out .25s;
     pointer-events: none;
     overflow: hidden !important;
 }

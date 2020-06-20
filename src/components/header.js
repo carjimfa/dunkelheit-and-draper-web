@@ -26,13 +26,13 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
   let ballX = 0;
   let ballY = 0;
 
-  let speed = 1;
+  let speed = 0.1;
 
   if(typeof(document)!==`undefined`){
     document.onmousemove=function(evt){
-      ball=document.getElementById("ball");
-      document.getElementById("ball").style.left=evt.pageX+"px";
-      document.getElementById("ball").style.top=evt.pageY+"px";
+      // ball=document.getElementById("ball");
+      // document.getElementById("ball").style.left=evt.pageX+"px";
+      // document.getElementById("ball").style.top=evt.pageY+"px";
       mouseX=evt.pageX;
       mouseY=evt.pageY;
     }
