@@ -204,12 +204,14 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
         }}>
           <div style={{
             backgroundImage: `url(${data.versionImage.edges[0].node.publicURL})`,
-            height: "80px",
-            width: "80px",
+            height: "4vw",
+            width: "4vw",
+            minHeight: "50px",
+            minWidth: "50px",
             backgroundSize: "contain",
             position: "absolute",
             top: "1vw",
-            right: "calc(40px + 1vw)",
+            right: "3vw",
             animation: "rotate linear 10s infinite"
           }}>
           </div>

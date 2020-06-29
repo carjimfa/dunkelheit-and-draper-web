@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import WorkflowElements from "../components/workflow-elements"
 
 const WorflowPage = () => (
-  <Layout innerHeight="100%" outerHeight="60vh" backgroundColor="#F9BCBF" color="#3B625C" gridType="baseline">
+  <Layout innerHeight="100%" outerHeight="auto" backgroundColor="#F9BCBF" color="#3B625C" gridType="baseline">
     <SEO title="Workflow" />
     <div className="col-1"></div>
     <div className="col-7">
