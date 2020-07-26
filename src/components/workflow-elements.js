@@ -15,7 +15,7 @@ const WorkflowElements = ({ }) => {
     const getWorkflowElements=function(){
         let workflowElements=[];
         pages.forEach(p=>{
-        let element=<h1 className="workflow-element-title pattern-diagonal-lines-sm white text-pattern">{p.title}</h1>
+        let element=<h1 className="workflow-element-title">{p.title}</h1>
         workflowElements.push(element);
         });
         return workflowElements;
@@ -23,8 +23,9 @@ const WorkflowElements = ({ }) => {
 
     return (
         <>
-            <div className="col-12">
-                <div id="workflow-navigation">
+            <div className="col-12 grid" style={{width:"100%"}}>
+                <div className="col-1"></div>
+                <div className="col-11" id="workflow-navigation">
                     <ul>
                         <li id="nav-element-0"></li>
                         <li id="nav-element-1">Listen</li>

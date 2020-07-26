@@ -104,6 +104,7 @@ h1.workflow-title{
     line-height: 123px;
     -webkit-text-stroke-width: 1px; 
     -webkit-text-stroke-color: #3B625C;
+    color: rgba(59, 98, 92, 1)
 }
 
 
@@ -203,5 +204,7 @@ h1.workflow-title{
     margin: 0;
     font-family: Lust;
     text-align: center;
-    -webkit-text-stroke: 1px #3B625C;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: #3B625C;
+    color: rgba(59, 98, 92, 0.5)
 }
