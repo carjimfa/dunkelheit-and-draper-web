@@ -87,6 +87,14 @@
     overflow: hidden;
   }
 
+
+  
+  @media(orientation:landscape){
+    .hide-desktop{
+      display: none !important;
+    }
+  }
+
   @media(orientation:portrait){
     .col-1 {
       grid-column: auto/span 12;
@@ -135,4 +143,10 @@
     .col-12 {
       grid-column: auto/span 12;
     }
+
+    
+    .hide-mobile{
+      display: none !important;
+    }
+
   }

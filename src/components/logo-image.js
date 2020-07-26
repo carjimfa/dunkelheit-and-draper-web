@@ -41,7 +41,7 @@ const LogoImage = ({backgroundColor="#F9BCBF"}) => {
 
     function getImage(data){
       console.log(data)
-      let imageElement=<img src={backgroundColor===greenColor?data.logoPink.edges[0].node.publicURL:data.logoGreen.edges[0].node.publicURL} className="image-logo" />;
+      let imageElement=<img className="logo-image" src={backgroundColor===greenColor?data.logoPink.edges[0].node.publicURL:data.logoGreen.edges[0].node.publicURL} className="image-logo" />;
       return imageElement;
     }
     

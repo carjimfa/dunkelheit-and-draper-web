@@ -8,7 +8,7 @@ import './style.css'
 import LogoImage from "./logo-image"
 
 
-const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" }) => {
+const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF", className="" }) => {
 
   let isShown=false;
   let greenColor="#3B625C";
@@ -88,8 +88,6 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
 
   }
 
-
-
   function onEnterPointerAbout(){
     onEnterPointer("Meet D&D", 350);
   }
@@ -154,7 +152,7 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
       }
     `);
 
-  let result = <header
+  let result = <header className={className}
     style={{
       display: 'grid',
       gridTemplateColumns: "24vw 50vw 24vw",
@@ -165,7 +163,7 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
       backgroundColor:backgroundColor,
       color:color
     }}
-    className=""
+    className={className}
   >
     <div style={{ margin: `0 auto`, textAlign: `left`, width: `100%` }}>
       <h1 style={{ margin: 0, width: `100%` }}>

@@ -24,10 +24,10 @@ const WorkflowElements = ({ }) => {
                 <div className="grid" style={{width:"100%"}}>
                     <h1 className="workflow-element-title col-12">{p.title}</h1>
                     <div className="col-6 grid" style={{width:"100%", borderRight:'3px solid #3b625c'}}>
-                        <h2 className="col-6"></h2>
+                        <h2 className="col-6 hide-mobile"></h2>
                         <h2 className="col-6 font-lust" style={{fontSize:"54px", textAlign:"right", marginRight:"2vw", marginTop:"0", marginBottom:"0"}}>{p.subtitle}</h2>
                     </div>
-                    <div className="col-6 grid" style={{width:"100%"}}>
+                    <div className="col-6 grid workflow-element-copies" style={{width:"100%"}}>
                         <p className="col-8" style={{marginTop:"0", marginBottom:"0"}}>
                             <ul style={{marginTop:"0", paddingLeft:"0", marginLeft:"calc(2vw - 1rem)", marginBottom:"0"}}>
                                 {copies}
@@ -45,7 +45,7 @@ const WorkflowElements = ({ }) => {
         <>
             <div className="col-12 grid" style={{width:"100%"}}>
                 <div className="col-1"></div>
-                <div className="col-11" id="workflow-navigation">
+                <div className="col-11 hide-mobile" id="workflow-navigation">
                     <ul>
                         <li id="nav-element-0"></li>
                         <li id="nav-element-1">Listen</li>

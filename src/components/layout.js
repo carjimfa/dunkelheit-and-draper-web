@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import "./style.css"
+import HeaderMobile from "./header-mobile"
 
 const Layout = ({ children, outerHeight, innerHeight, backgroundColor="#3B625C", color="#F9BCBF", gridType="center"}) => {
   let greenColor="#3B625C";
@@ -34,16 +35,17 @@ const Layout = ({ children, outerHeight, innerHeight, backgroundColor="#3B625C",
   return (
     <div id="layout-main-container" style={{backgroundColor:backgroundColor, color:color}}>
       <div id="main-layout-content">
-        <Header siteTitle={data.site.siteMetadata.title} color={color} backgroundColor={backgroundColor}/>
+        <Header className="hide-mobile" siteTitle={data.site.siteMetadata.title} color={color} backgroundColor={backgroundColor}/>
+        <HeaderMobile className="hide-desktop" siteTitle={data.site.siteMetadata.title} color={color} backgroundColor={backgroundColor}/>
         <div style={{height:outerHeight}}>
           <main className={gridClass} style={{height:innerHeight}}>{children}</main>
         </div>
       </div>
-      <div id="ball" className="ball" style={{
+      <div id="ball" className="ball hide-mobile" style={{
         backgroundColor:ballBackgroundColor,
         mixBlendMode:"exclusion"
       }}>
-        <div id="ball-text" style={{mixBlendMode:"normal", color:ballColor}}></div>
+        <div className="hide-mobile" id="ball-text" style={{mixBlendMode:"normal", color:ballColor}}></div>
       </div>
     </div>
   )

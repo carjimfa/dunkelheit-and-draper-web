@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="22px" viewBox="0 0 34 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>menu </title>
+    <g id="Web-2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Mobile-Home-Copy" transform="translate(-355.000000, -34.000000)" stroke="#3B625C" stroke-width="2">
+            <g id="menu-" transform="translate(356.000000, 35.000000)">
+                <line x1="0.56" y1="9.5536" x2="30.8809375" y2="9.5536" id="Line"></line>
+                <line x1="13.44" y1="0.56" x2="31.7184" y2="0.56" id="Line-Copy"></line>
+                <line x1="0.56" y1="19.1072" x2="18.834375" y2="19.1072" id="Line-Copy-2" fill="#3B625C"></line>
+            </g>
+        </g>
+    </g>
+</svg>
