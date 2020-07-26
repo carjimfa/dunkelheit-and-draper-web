@@ -204,6 +204,6 @@ h1.workflow-title{
     text-align: center;
     -webkit-text-stroke-width: 4px; 
     -webkit-text-stroke-color: #3B625C;
-    color: rgba(59, 98, 92, 0.5);
+    color: rgba(59, 98, 92, 0);
     font-weight: 400;
 }

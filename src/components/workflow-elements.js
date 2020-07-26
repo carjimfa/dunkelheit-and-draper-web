@@ -15,8 +15,28 @@ const WorkflowElements = ({ }) => {
     const getWorkflowElements=function(){
         let workflowElements=[];
         pages.forEach(p=>{
-        let element=<h1 className="workflow-element-title">{p.title}</h1>
-        workflowElements.push(element);
+            let copies=[]
+            p.copy.forEach(c=>{
+                let copyElement=<li style={{listStyle:"none"}}>{c}</li>
+                copies.push(copyElement)
+            })
+            let element=
+                <div className="grid" style={{width:"100%"}}>
+                    <h1 className="workflow-element-title col-12">{p.title}</h1>
+                    <div className="col-6 grid" style={{width:"100%", borderRight:'3px solid #3b625c'}}>
+                        <h2 className="col-6"></h2>
+                        <h2 className="col-6 font-lust" style={{fontSize:"54px", textAlign:"right", marginRight:"2vw", marginTop:"0", marginBottom:"0"}}>{p.subtitle}</h2>
+                    </div>
+                    <div className="col-6 grid" style={{width:"100%"}}>
+                        <p className="col-8" style={{marginTop:"0", marginBottom:"0"}}>
+                            <ul style={{marginTop:"0", paddingLeft:"0", marginLeft:"calc(2vw - 1rem)", marginBottom:"0"}}>
+                                {copies}
+                            </ul>
+                        </p>
+                        <p className="col-4"></p>
+                    </div>
+                </div>
+            workflowElements.push(element);
         });
         return workflowElements;
     }
