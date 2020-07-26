@@ -30,9 +30,6 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
 
   if(typeof(document)!==`undefined`){
     document.onmousemove=function(evt){
-      // ball=document.getElementById("ball");
-      // document.getElementById("ball").style.left=evt.pageX+"px";
-      // document.getElementById("ball").style.top=evt.pageY+"px";
       mouseX=evt.pageX;
       mouseY=evt.pageY;
     }
@@ -94,19 +91,23 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
 
 
   function onEnterPointerAbout(){
-    onEnterPointer("What are we doing here?", 250);
+    onEnterPointer("Meet D&D", 350);
   }
 
   function onEnterPointerHome(){
-    onEnterPointer("Let's go back home.", 250);
+    onEnterPointer("Let's go back home.", 350);
   }
 
   function onEnterPointerWorkflow(){
-    onEnterPointer("How do we handle all this?", 250);
+    onEnterPointer("It's all about process", 350);
   }
 
   function onEnterPointerContact(){
-    onEnterPointer("Buy us a Matcha Latte!", 250);
+    onEnterPointer("Buy us a Matcha Latte!", 350);
+  }
+
+  function onEnterPointerProjects(){
+    onEnterPointer("See our work", 350);
   }
 
   let data = useStaticQuery(graphql`
@@ -202,22 +203,7 @@ const Header = ({ siteTitle="Title", backgroundColor="#3B625C", color="#F9BCBF" 
           width: "8vw",
           textAlign:"center"
         }}>
-          <div style={{
-            backgroundImage: `url(${data.versionImage.edges[0].node.publicURL})`,
-            height: "4vw",
-            width: "4vw",
-            minHeight: "50px",
-            minWidth: "50px",
-            backgroundSize: "contain",
-            position: "absolute",
-            top: "1vw",
-            right: "3vw",
-            animation: "rotate linear 10s infinite"
-          }}>
-          </div>
-          <div>
-            <span className="font-lust">0.8</span>
-          </div>
+          <AniLink style={{color:color}} paintDrip hex={color} to="/projects/" className="font-lust  no-decoration" onMouseEnter={onEnterPointerProjects} onMouseLeave={onLeavePointer}>Projects</AniLink>
         </div>
       </div>
     </div>

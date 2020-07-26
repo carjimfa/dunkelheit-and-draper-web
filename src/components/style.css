@@ -14,7 +14,7 @@ body {
 }
 
 header a {
-    margin: 0 0 0 16px;
+    margin: 0;
 }
 
 header img.image-logo{
@@ -82,9 +82,15 @@ header img.image-logo{
 
 h1.workflow-over-title{
     text-align: left;
-    border-bottom: 4px #3B625C solid;
     width: 100%;
+    font-family: Rubik;
+    font-weight: lighter;
+    font-size: 87px;
+    color: #3B625C;
+    letter-spacing: 2.36px;
     text-transform: uppercase;
+    border-bottom: 4px solid #3b625c;
+    margin-bottom: 0;
 }
 
 h1.workflow-title{
@@ -92,8 +98,13 @@ h1.workflow-title{
     margin-bottom: 0;
     text-align: left;
     width: 100%;
+    padding-top: 36px;
+    border-top: 4px solid #3B625C;
+    font-family: Lust;
     font-size: 149px;
     line-height: 123px;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: #3B625C;
 }
 
 
