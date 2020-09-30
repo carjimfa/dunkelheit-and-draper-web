@@ -41,12 +41,6 @@ const Layout = ({ children, outerHeight, innerHeight, backgroundColor="#3B625C",
           <main className={gridClass} style={{height:innerHeight}}>{children}</main>
         </div>
       </div>
-      <div id="ball" className="ball hide-mobile" style={{
-        backgroundColor:ballBackgroundColor,
-        mixBlendMode:"exclusion"
-      }}>
-        <div className="hide-mobile" id="ball-text" style={{mixBlendMode:"normal", color:ballColor}}></div>
-      </div>
     </div>
   )
 }
