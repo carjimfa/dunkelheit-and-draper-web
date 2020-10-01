@@ -208,6 +208,36 @@ h1.workflow-title{
     font-weight: 400;
 }
 
+#contact-form input[type=text],
+#contact-form input[type=email],
+#contact-form textarea
+{
+    border: none;
+    border-bottom: 1px solid #F9BCBF;
+    color: #F9BCBF;
+    background-color: #3B625C;
+    width: 30%;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 5px 8px;
+}
+
+#contact-form button{
+    color: #3B625C;
+    background-color: #F9BCBF;
+    border: 1px solid #3B625C;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 5px 8px;
+    transition: all .2s linear;
+}
+
+#contact-form button:hover{
+    -webkit-box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.75);
+}
+
 @media(orientation:portrait){
     body{
         overflow-x: hidden !important;
